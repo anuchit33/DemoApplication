@@ -123,8 +123,9 @@
     - ใส่รูป
     - ใช้สี
     - ใส่ขนาด
-    - ใช้ style
 6. การใช้ intent
+
+    
 7. การใช้ list view VS scrollview
 8. การใช้ fragment
 9. การต่อ api
