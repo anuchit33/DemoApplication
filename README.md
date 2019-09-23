@@ -10,6 +10,7 @@
     - Manifests
     - Java
     - resource
+    - การเปลี่ยน icon launcher
 4. การใช้  Activity Class
 ลิงค์ AppCompatActivity -> https://developer.android.com/reference/android/support/v7/app/AppCompatActivity
     - AppCompatActivity VS Activity
@@ -19,7 +20,7 @@
     - onStop
     - onDestroy
     - onBackPressed
-#### ตัวย่าง activity
+#### ตัวย่าง 1 activity
 ````
     @Override
     protected void onResume() {
@@ -47,10 +48,18 @@
 
     @Override
     public void onBackPressed() {
+        Log.i("DEMO_DEBUG","onBackPressed");
+    }
+````
+
+#### ตัวอย่างที่ 2 onBackPressed
+````
+    @Override
+    public void onBackPressed() {
 
         new AlertDialog.Builder(this)
-                .setTitle("Title")
-                .setMessage("Do you really want to whatever?")
+                .setTitle("แจ้งเตือน")
+                .setMessage("ยืนยันปิด?")
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
@@ -62,7 +71,59 @@
         Log.i("DEMO_DEBUG","onBackPressed");
     }
 ````
+เพิ่ม onBackPressed2
+````
+    private void onBackPressed2(){
+        super.onBackPressed();
+    }
+````
+
+#### ตัวอย่างที่ 3 onDestroy
+````
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        handler = new Handler();
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                Log.i("DEMO_DEBUG","Number: "+(number++));
+                runNumber();
+            }
+        };
+
+        runNumber();
+    }
+````
+เพิ่ม runNumber,stopNumber
+````
+    private void runNumber(){
+        handler.postDelayed(runnable,1000);
+    }
+    private void stopNumber(){
+        handler.removeCallbacks(runnable);
+    }
+````
+
+เรียก stopNumber
+````
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("DEMO_DEBUG","onDestroy");
+
+        stopNumber();
+    }
+````
+
 5. การสร้าง layout
+    - เพิ่มหลายภาษา
+    - ใส่รูป
+    - ใช้สี
+    - ใส่ขนาด
+    - ใช้ style
 6. การใช้ intent
 7. การใช้ list view VS scrollview
 8. การใช้ fragment
