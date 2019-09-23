@@ -5,16 +5,42 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
+
+    private Runnable runnable;
+    private Handler handler;
+    private int number;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i("DEMO_DEBUG","onCreate");
         setContentView(R.layout.activity_main);
+
+        handler = new Handler();
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                Log.i("DEMO_DEBUG","Number: "+(number++));
+                runNumber();
+            }
+        };
+
+        runNumber();
+    }
+
+    private void runNumber(){
+        handler.postDelayed(runnable,1000);
+    }
+    private void stopNumber(){
+        handler.removeCallbacks(runnable);
     }
 
     @Override
@@ -27,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.i("DEMO_DEBUG","onDestroy");
+
+        stopNumber();
     }
 
     @Override

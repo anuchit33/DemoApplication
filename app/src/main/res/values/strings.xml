@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DemoApplication</string>
+    <string name="ex_1">example 1</string>
+    <string name="screen2">Screen 2</string>
 </resources>
