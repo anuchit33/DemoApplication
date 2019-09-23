@@ -11,25 +11,14 @@
     - Java
     - resource
 4. การใช้  Activity Class
-    -  กด Run (AppCompatActivity)
-    - ใช้  Activity Class
-```
-package com.theim.demo;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
-import android.os.Bundle;
-
-public class MainActivity extends Activity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-}
-```
+ลิงค์ AppCompatActivity -> https://developer.android.com/reference/android/support/v7/app/AppCompatActivity
+    - AppCompatActivity VS Activity
+    - onCreate
+    - onStart
+    - onResume
+    - onStop
+    - onDestroy
+    - onBackPressed
 
 5. การสร้าง layout
 6. การใช้ intent
