@@ -10,6 +10,7 @@
     - Manifests
     - Java
     - resource
+    - การเปลี่ยน icon launcher
 4. การใช้  Activity Class
 ลิงค์ AppCompatActivity -> https://developer.android.com/reference/android/support/v7/app/AppCompatActivity
     - AppCompatActivity VS Activity
@@ -118,6 +119,11 @@
 ````
 
 5. การสร้าง layout
+    - เพิ่มหลายภาษา
+    - ใส่รูป
+    - ใช้สี
+    - ใส่ขนาด
+    - ใช้ style
 6. การใช้ intent
 7. การใช้ list view VS scrollview
 8. การใช้ fragment
