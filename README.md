@@ -13,21 +13,6 @@
     - การเปลี่ยน icon launcher
 4. การใช้  Activity Class
 ลิงค์ AppCompatActivity -> https://developer.android.com/reference/android/support/v7/app/AppCompatActivity
-### ตัวอย่าง การใส่ icon back และ ใส่ title
-````
-getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-getSupportActionBar().setDisplayShowHomeEnabled(true);
-getSupportActionBar().setTitle("Title Name");
-````
-เพิ่ม onSupportNavigateUp
-````
-    @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed();
-        return super.onSupportNavigateUp();
-    }
-````
-####
     - AppCompatActivity VS Activity
     - onCreate
     - onStart
@@ -35,9 +20,24 @@ getSupportActionBar().setTitle("Title Name");
     - onStop
     - onDestroy
     - onBackPressed
+### ตัวอย่าง การใส่ icon back และ ใส่ title
+```
+getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+getSupportActionBar().setDisplayShowHomeEnabled(true);
+getSupportActionBar().setTitle("Title Name");
+```
+เพิ่ม onSupportNavigateUp
+```
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return super.onSupportNavigateUp();
+    }
+```
+
     
 #### ตัวย่าง 1 activity
-````
+```
     @Override
     protected void onResume() {
         super.onResume();
@@ -66,10 +66,10 @@ getSupportActionBar().setTitle("Title Name");
     public void onBackPressed() {
         Log.i("DEMO_DEBUG","onBackPressed");
     }
-````
+```
 
 #### ตัวอย่างที่ 2 onBackPressed
-````
+```
     @Override
     public void onBackPressed() {
 
@@ -86,16 +86,16 @@ getSupportActionBar().setTitle("Title Name");
 
         Log.i("DEMO_DEBUG","onBackPressed");
     }
-````
+```
 เพิ่ม onBackPressed2
-````
+```
     private void onBackPressed2(){
         super.onBackPressed();
     }
-````
+```
 
 #### ตัวอย่างที่ 3 onDestroy
-````
+```
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,19 +112,19 @@ getSupportActionBar().setTitle("Title Name");
 
         runNumber();
     }
-````
+```
 เพิ่ม runNumber,stopNumber
-````
+```
     private void runNumber(){
         handler.postDelayed(runnable,1000);
     }
     private void stopNumber(){
         handler.removeCallbacks(runnable);
     }
-````
+```
 
 เรียก stopNumber
-````
+```
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -132,7 +132,7 @@ getSupportActionBar().setTitle("Title Name");
 
         stopNumber();
     }
-````
+```
 
 5. การสร้าง layout
 อ่านเพิ่ม > https://developer.android.com/guide/topics/ui/declaring-layout#java
