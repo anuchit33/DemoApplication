@@ -119,12 +119,15 @@
 ````
 
 5. การสร้าง layout
+อ่านต่อ > https://developer.android.com/guide/topics/ui/declaring-layout#java
     - เพิ่มหลายภาษา
     - ใส่รูป
-    - ใช้สี
+    - ใส่สี
     - ใส่ขนาด
-    - ใช้ style
 6. การใช้ intent
-7. การใช้ list view VS scrollview
+อ่านต่อ > https://developer.android.com/reference/android/content/Intent
+    - การส่งตัวแปร
+    - การใช้ Flags
+7. การใช้ RecyclerView
 8. การใช้ fragment
 9. การต่อ api
