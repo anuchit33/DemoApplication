@@ -2,91 +2,54 @@ package com.theim.demo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Runnable runnable;
-    private Handler handler;
-    private int number;
+    private Button btnScreen1,btnScreen2,btnScreen3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        handler = new Handler();
-        runnable = new Runnable() {
-            @Override
-            public void run() {
-                Log.i("DEMO_DEBUG","Number: "+(number++));
-                runNumber();
-            }
-        };
+        btnScreen1 = findViewById(R.id.btnScreen1);
+        btnScreen2 = findViewById(R.id.btnScreen2);
+        btnScreen3 = findViewById(R.id.btnScreen3);
 
-        runNumber();
-    }
-
-    private void runNumber(){
-        handler.postDelayed(runnable,1000);
-    }
-    private void stopNumber(){
-        handler.removeCallbacks(runnable);
+        // set on click
+        btnScreen1.setOnClickListener(this);
+        btnScreen2.setOnClickListener(this);
+        btnScreen3.setOnClickListener(this);
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        Log.i("DEMO_DEBUG","onResume");
+    public void onClick(View v) {
+
+        if(v.getId()==R.id.btnScreen1){
+            goScreen1();
+        }else if(v.getId()==R.id.btnScreen2) {
+            goScreen2();
+        }else if(v.getId()==R.id.btnScreen3) {
+            goScreen3();
+        }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i("DEMO_DEBUG","onDestroy");
-
-        stopNumber();
+    private void goScreen1(){
+        Intent intent = new Intent(this,Screen1Activity.class);
+        startActivity(intent);
     }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.i("DEMO_DEBUG","onStart");
+    private void goScreen2(){
+        Intent intent = new Intent(this,Screen2Activity.class);
+        intent.putExtra("ref","MainActivity");
+        startActivity(intent);
     }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i("DEMO_DEBUG","onStop");
-    }
-
-    @Override
-    public void onBackPressed() {
-
-        new AlertDialog.Builder(this)
-                .setTitle("แจ้งเตือน")
-                .setMessage("ยืนยันปิด?")
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        onBackPressed2();
-                    }})
-                .setNegativeButton(android.R.string.no, null).show();
-
-        Log.i("DEMO_DEBUG","onBackPressed");
-    }
-
-    private void onBackPressed2(){
-        super.onBackPressed();
+    private void goScreen3(){
+        Intent intent = new Intent(this,Screen3Activity.class);
+        intent.putExtra("number",1);
+        startActivity(intent);
     }
 }

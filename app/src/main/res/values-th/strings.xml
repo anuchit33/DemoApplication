@@ -2,4 +2,6 @@
 <resources>
     <string name="ex_1">ตัวอย่าง 1</string>
     <string name="screen2">หน้า 2</string>
+    <string name="screen1">หน้า 1</string>
+    <string name="screen3">หน้า 3</string>
 </resources>
