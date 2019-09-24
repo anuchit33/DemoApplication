@@ -13,6 +13,20 @@
     - การเปลี่ยน icon launcher
 4. การใช้  Activity Class
 ลิงค์ AppCompatActivity -> https://developer.android.com/reference/android/support/v7/app/AppCompatActivity
+### ตัวอย่าง การใส่ icon back และ ใส่ title
+````
+getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+getSupportActionBar().setDisplayShowHomeEnabled(true);
+getSupportActionBar().setTitle("Title Name");
+````
+เพิ่ม onSupportNavigateUp
+````
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return super.onSupportNavigateUp();
+    }
+````
     - AppCompatActivity VS Activity
     - onCreate
     - onStart
