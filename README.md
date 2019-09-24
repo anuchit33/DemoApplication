@@ -130,5 +130,3 @@
     - การใช้ Flags
 7. การใช้ RecyclerView 
 อ่านเพิ่ม -> https://developer.android.com/guide/topics/ui/layout/recyclerview
-8. การใช้ fragment
-9. การต่อ api
