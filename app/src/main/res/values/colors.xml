@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="text_red">#D80C0C</color>
+    <color name="backgroup">#DEDEDE</color>
 </resources>

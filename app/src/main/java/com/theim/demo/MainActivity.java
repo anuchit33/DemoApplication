@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnScreen1,btnScreen2,btnScreen3,buttonRecyclerView,buttonFragment;
+    private Button btnScreen1,btnScreen2,btnScreen3,buttonRecyclerView,buttonAPI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,14 +21,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnScreen2 = findViewById(R.id.btnScreen2);
         btnScreen3 = findViewById(R.id.btnScreen3);
         buttonRecyclerView = findViewById(R.id.buttonRecyclerView);
-        //buttonFragment = findViewById(R.id.buttonFragment);
+        buttonAPI = findViewById(R.id.buttonAPI);
 
         // set on click
         btnScreen1.setOnClickListener(this);
         btnScreen2.setOnClickListener(this);
         btnScreen3.setOnClickListener(this);
         buttonRecyclerView.setOnClickListener(this);
-        //buttonFragment.setOnClickListener(this);
+        buttonAPI.setOnClickListener(this);
     }
 
     @Override
@@ -36,43 +36,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()) {
             case R.id.btnScreen1:
-                goScreen1();
+                goToScreen1();
                 break;
             case R.id.btnScreen2:
-                goScreen2();
+                goToScreen2();
                 break;
             case R.id.btnScreen3:
-                goScreen3();
+                goToScreen3();
                 break;
             case R.id.buttonRecyclerView:
-                goRecyclerView();
+                goToRecyclerView();
+                break;
+            case R.id.buttonAPI:
+                goToApi();
                 break;
         }
 
     }
 
-    private void goScreen1(){
+    private void goToScreen1(){
         Intent intent = new Intent(this,Screen1Activity.class);
         startActivity(intent);
     }
-    private void goScreen2(){
+    private void goToScreen2(){
         Intent intent = new Intent(this,Screen2Activity.class);
         intent.putExtra("ref","MainActivity");
         startActivity(intent);
     }
-    private void goScreen3(){
+    private void goToScreen3(){
         Intent intent = new Intent(this,Screen3Activity.class);
         intent.putExtra("number",1);
         startActivity(intent);
     }
 
-    private void goRecyclerView(){
+    private void goToRecyclerView(){
         Intent intent = new Intent(this, RecyclerViewActivity.class);
         startActivity(intent);
     }
 
-    private void goFragmentView(){
-        Intent intent = new Intent(this, FragmentViewActivity.class);
+    private void goToApi(){
+        Intent intent = new Intent(this, NewsActivity.class);
         startActivity(intent);
     }
 }

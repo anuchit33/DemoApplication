@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FragmentViewActivity"></activity>
+        <activity android:name=".NewsDetailActivity"></activity>
+        <activity android:name=".NewsActivity" />
+        <activity android:name=".FragmentViewActivity" />
         <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".Screen3Activity" />
         <activity android:name=".Screen1Activity" />
@@ -21,6 +23,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".LoadNewsService"
+            android:exported="false" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

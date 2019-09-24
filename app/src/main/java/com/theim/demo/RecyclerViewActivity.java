@@ -23,7 +23,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         for(int i=0;i<size;i++)
             myDataset[i] = "Text Number:"+i;
 
-        recyclerView = (RecyclerView)findViewById(R.id.recyclerViewiew);
+        recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
@@ -34,7 +34,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         // specify an adapter (see also next example)
-        mAdapter = new MyAdapter(myDataset);
+        mAdapter = new RecyclerAdapter(myDataset);
         recyclerView.setAdapter(mAdapter);
     }
 }

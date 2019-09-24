@@ -36,6 +36,12 @@
             android:layout_height="wrap_content"
             android:text="RecyclerView" />
 
+        <Button
+            android:id="@+id/buttonAPI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="API" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
