@@ -27,6 +27,7 @@ getSupportActionBar().setTitle("Title Name");
         return super.onSupportNavigateUp();
     }
 ````
+####
     - AppCompatActivity VS Activity
     - onCreate
     - onStart
@@ -34,6 +35,7 @@ getSupportActionBar().setTitle("Title Name");
     - onStop
     - onDestroy
     - onBackPressed
+    
 #### ตัวย่าง 1 activity
 ````
     @Override
