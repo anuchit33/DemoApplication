@@ -119,15 +119,14 @@
 ````
 
 5. การสร้าง layout
-อ่านต่อ > https://developer.android.com/guide/topics/ui/declaring-layout#java
+อ่านเพิ่ม > https://developer.android.com/guide/topics/ui/declaring-layout#java
     - เพิ่มหลายภาษา
     - ใส่รูป
     - ใส่สี
     - ใส่ขนาด
 6. การใช้ intent
-อ่านต่อ > https://developer.android.com/reference/android/content/Intent
+อ่านเพิ่ม > https://developer.android.com/reference/android/content/Intent
     - การส่งตัวแปร
     - การใช้ Flags
-7. การใช้ RecyclerView
-8. การใช้ fragment
-9. การต่อ api
+7. การใช้ RecyclerView 
+อ่านเพิ่ม -> https://developer.android.com/guide/topics/ui/layout/recyclerview
