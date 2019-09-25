@@ -135,7 +135,8 @@ getSupportActionBar().setTitle("Title Name");
 ```
 
 5. การสร้าง layout
-อ่านเพิ่ม > https://developer.android.com/guide/topics/ui/declaring-layout#java
+อ่านเพิ่ม > https://developer.android.com/guide/topics/ui/declaring-layout#java ,
+https://developer.android.com/training/multiscreen/screensizes
     - เพิ่มหลายภาษา
     - ใส่รูป
     - ใส่สี
